@@ -1,0 +1,30 @@
+<h1>Todos App</h1>
+<!-- form for inputing todo items -->
+<!--form_for(@post, remote: true)-->
+<%= form_for(@todo, remote: true) do |f| %>
+	<%= f.label :todo %>
+	<%= f.text_field :todo %>
+	<%= f.label :completed %>
+	<%= f.check_box :completed %>
+	<%= f.submit %>
+<% end %>
+
+<!-- list of all items -->
+<div id="todos">
+	<% @todos.each do |t| %>
+	<!-- :todo => t maps :todo to the t in the iterator -->
+	<%#= render "todo", :todo => t %>
+	<%= render t, :todo => t %>
+
+
+
+<!-- this part refactored out into a partial	  
+<li data-id='<%= t.id %>'><%= t.todo %> - <%= t.completed %>
+	  	  <%#= link_to "delete", todo_path(t), :method => "delete", :remote => true %> -->
+	  	  <%#= button_to "delete", @todo, remote: true, method: :delete %>
+	  <!-- </li> -->
+
+	<% end %>
+
+
+</div>

@@ -1,0 +1,7 @@
+//alert("the request was made!");
+
+//$("#todos").append("<li>blad</li>");
+//var item = "<li><%= @todo.todo %> - <%= @todo.completed %></li>"
+//var item = '<li data-id="<%=@todo.id%>"><%= @todo.todo %> - <%= @todo.completed %> <%= link_to "delete", todo_path(@todo), :method => "delete", :remote => true %></li> (javascript create)';
+//$("#todos").append(item);
+$("#todos").append('<%= escape_javascript(render @todo) %>');
